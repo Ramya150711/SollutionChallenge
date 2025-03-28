@@ -1,11 +1,10 @@
-import os
 from flask import Flask, request, render_template
 import google.generativeai as genai
 from PIL import Image
 
 app = Flask(__name__)
 
-genai.configure(api_key=os.environ.get('AIzaSyBdUM521lV7jxNHxaimQDJ4imO97_SMyGc'))
+genai.configure(api_key='AIzaSyBdUM521lV7jxNHxaimQDJ4imO97_SMyGc')  # Replace with your API key
 @app.route('/', methods=['GET', 'POST'])
 def upload_image():
     if request.method == 'POST':
