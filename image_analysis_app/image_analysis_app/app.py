@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template
 import google.generativeai as genai
 from PIL import Image
@@ -21,7 +22,7 @@ def upload_image():
     
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
 
     
